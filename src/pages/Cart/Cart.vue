@@ -1,0 +1,77 @@
+<template>
+  <div class="cart">
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+    Cart<br>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
