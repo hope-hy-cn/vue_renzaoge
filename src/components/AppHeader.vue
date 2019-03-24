@@ -1,6 +1,7 @@
 <template>
     <div class="app-header">
-      <p  class="app-header-input" @click="search">搜索商品发现更多优选</p>
+      <mt-button @click="$router.back()" slot="left" icon="back" v-if="headername !== '搜索商品发现更多优选'"></mt-button>
+      <p  class="app-header-input" @click="search">{{headername}}</p>
     </div>
 </template>
 
@@ -9,6 +10,12 @@ export default {
   methods: {
     search () {
       this.$router.push('/search')
+    }
+  },
+  props: {
+    headername: {
+      type: String,
+      default: '搜索商品发现更多优选'
     }
   }
 }
@@ -20,7 +27,9 @@ export default {
     height: 11.5vw;
     border-bottom: 1px solid #dedede;
     box-sizing: border-box;
+    // text-align: center;
     line-height: 11.5vw;
+    // color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

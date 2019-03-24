@@ -25,6 +25,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  font-size: .16rem;
 
   &-main {
     flex: 1;

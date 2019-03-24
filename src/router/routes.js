@@ -72,7 +72,8 @@ const routes = [
     meta: {
       title: '购物车',
       icon: '&#xe656;',
-      isTabbar: true
+      isTabbar: true,
+      isAuthRequired: true
     },
     components: {
       default: Cart,

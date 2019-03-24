@@ -21,6 +21,50 @@ Vue.config.productionTip = false
 // 全局注册MintUI
 Vue.use(MintUI)
 
+// 全局混入
+const mixin = {
+  filters: {
+    tofix (val) {
+      return val.toFixed(2)
+    },
+    omitted (val) {
+      return val > 10000 ? parseInt(val / 10000) + '.' + parseInt((val % 10000) / 1000) + '万' : val
+    },
+    cartFix (val) {
+      return val > 99 ? 99 + '+' : val
+    }
+  }
+}
+
+Vue.mixin(mixin)
+
+// 导航守卫
+router.beforeEach((to, from, next) => {
+  if (to.path === '/mine') {
+    const userInfo = JSON.parse(window.localStorage.getItem('user-info'))
+    if(userInfo && userInfo.username) {
+      store.commit('alrLoginSucc')
+    }
+    next()
+  } else {
+    if (to.meta.isAuthRequired && store.state.isLogin === false) {
+      // 如果需要权限并且没有登录，就需要跳转登录页
+      const userInfo = JSON.parse(window.localStorage.getItem('user-info'))
+      if(userInfo && userInfo.username) {
+        store.commit('alrLoginSucc')
+      }else {
+        next({
+          name: 'login',
+          params: {
+            redirect: to.path
+          }
+        })
+      }
+    }
+    next()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

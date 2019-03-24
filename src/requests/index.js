@@ -36,3 +36,44 @@ export const getPanda = () => {
 export const getHomeMorePanda = (pages) => {
   return ajax.get(`/api/tab/1/feeds?start=${pages}&sort=0`)
 }
+
+// 获取分类左侧菜单
+export const getCategory = () => {
+  return ajax.get('/api/tabs?sa=')
+}
+
+// 获取分类右侧里的详情
+export const getCategoryList = (categoryID) => {
+  return ajax.get(`/api/tab/${categoryID}?start=0/${categoryID}`)
+}
+
+// 获取商品列表
+export const getProductList = (productListID, pages, sort) => {
+  return ajax.get(`/api/category/${productListID}/items?start=${pages}&sort=${sort}`)
+}
+
+// 获取商品详情
+export const getProductDetail = (productID) => {
+  return ajax.get(`/api/detail?id=${productID}&normal=1&sa=`)
+}
+
+// 搜索页的热门搜索
+export const getHotSearch = () => {
+  return ajax.get('/api/search/home')
+}
+
+// 搜索列表的数据接口
+export const getSearchList = (keywords, pages, sort) => {
+  return ajax.get(`/api/search?word=${keywords}&start=${pages}&sort=${sort}&couponOnly=NaN&minPrice=0&maxPrice=99999`)
+}
+
+// 首页的每日排行数据接口
+export const getDailyRank = () => {
+  return ajax.get('/api/tab/1?start=0')
+}
+
+// 活动页的9块9专区数据接口
+export const getActivity = (keywords) => {
+  return ajax.get(`/api/${keywords}/items?start=0`)
+}
+
